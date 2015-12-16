@@ -1,0 +1,13 @@
+name "ckan"
+description "Installs and configures CKAN."
+version "0.1.6"
+maintainer "Brook Elgie"
+maintainer_email "brook.elgie@okfn.org"
+license "AGPL"
+
+depends "apt"
+depends "git"
+depends "python"
+depends "postgresql"
+depends "database"
+depends "java"
