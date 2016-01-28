@@ -3,7 +3,7 @@
 EXIT=0
 
 # If apache running?
-if /etc/init.d/apache2 status | grep -v grep | grep -q 'Apache2 is running';
+if /etc/init.d/apache2 status | grep -v grep | grep -q 'apache2 is running';
 then
     echo "Apache2 is running"
 else
@@ -20,7 +20,7 @@ else
     EXIT=1
 fi
 
-if curl -o /dev/null --head --silent --write-out '%{http_code}\n' http://localhost:8983/solr/ | grep -v grep | grep -q '200';
+if curl -o /dev/null --head --silent --write-out '%{http_code}\n' "http://localhost:8983/solr/select?q=*:*" | grep -v grep | grep -q '200';
 then
     echo "Request to solr successful"
 else

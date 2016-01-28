@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "precise64"
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.box = "ubuntu/trusty64"
+  # config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   config.hostmanager.enabled = true
   config.hostmanager.manage_host = true
@@ -21,6 +21,6 @@ Vagrant.configure(2) do |config|
     end
 
     config.vm.provision "file", source: "cookbooks.tgz", destination: "/tmp/cookbooks.tgz"
-    config.vm.provision "shell", path: "ckan2.4_install.sh"
+    config.vm.provision "shell", path: "ckan2.5_install.sh"
 
   end

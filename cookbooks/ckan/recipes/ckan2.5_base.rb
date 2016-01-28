@@ -2,6 +2,7 @@ ENV['VIRTUAL_ENV'] = node[:ckan][:virtual_env_dir]
 ENV['PATH'] = "#{ENV['VIRTUAL_ENV']}/bin:#{ENV['PATH']}"
 SOURCE_DIR = "#{ENV['VIRTUAL_ENV']}/src"
 CKAN_DIR = "#{SOURCE_DIR}/ckan"
+CKAN_PACKAGE_NAME = 'python-ckan_2.5-trusty_amd64.deb'
 
 # INSTALL APACHE
 #
@@ -29,15 +30,15 @@ end
 # `remote_file` for production, `cookbook_file` is useful for development
 # where the package is on the host machine. Comment out as approiate.
 
-remote_file "#{Chef::Config[:file_cache_path]}/#{node[:ckan_package][:file_name]}" do
-  source "#{node[:ckan_package][:url]}#{node[:ckan_package][:file_name]}"
+remote_file "#{Chef::Config[:file_cache_path]}/#{CKAN_PACKAGE_NAME}" do
+  source "#{node[:ckan_package][:url]}#{CKAN_PACKAGE_NAME}"
 end
-# cookbook_file "#{Chef::Config[:file_cache_path]}/#{node[:ckan_package][:file_name]}" do
-#   source "#{node[:ckan_package][:url]}#{node[:ckan_package][:file_name]}"
+# cookbook_file "#{Chef::Config[:file_cache_path]}/#{CKAN_PACKAGE_NAME}" do
+#   source "#{node[:ckan_package][:url]}#{CKAN_PACKAGE_NAME}"
 # end
-dpkg_package "python-ckan_2.4" do
+dpkg_package "python-ckan_2.5" do
   action :install
-  source "#{Chef::Config[:file_cache_path]}/#{node[:ckan_package][:file_name]}"
+  source "#{Chef::Config[:file_cache_path]}/#{CKAN_PACKAGE_NAME}"
 end
 
 # CONFIGURE APACHE2
