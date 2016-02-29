@@ -14,7 +14,7 @@ A base_ubuntu_14.04 image with at least **m1.small** flavour.
 
 ## Scripts
 
-- `ckan2.5_install.sh`: to be run on the base image to install the CKAN 2.5 package and dependencies using chef. Requires that `cookbooks.tgz` is uploaded to the image at `/tmp/cookbooks.tgz`.
+- `ckan2.5_install.sh`: to be run on the base image to install the CKAN 2.5 package and dependencies using chef. Requires that `data.tgz` is uploaded to the image at `/tmp/data.tgz`.
 - `install_verification.sh`: runs `ckan2.5_install_verification.sh` in the image to verify that the installed services are running. Checks the following:
     + Apache2 is running
     + A request to http://localhost is successful
@@ -24,6 +24,6 @@ A base_ubuntu_14.04 image with at least **m1.small** flavour.
 
 ## Note
 
-If changes are made to the `cookbooks` directory, a new `cookbooks.tgz` archive will need to be created with:
+If changes are made to the `cookbooks` directory, a new `data.tgz` archive will need to be created with:
 
-`tar -czvf cookbooks.tgz cookbooks`
+`tar -czvf data.tgz cookbooks`

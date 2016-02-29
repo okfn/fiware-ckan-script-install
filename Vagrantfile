@@ -20,7 +20,7 @@ Vagrant.configure(2) do |config|
       vb.memory = "1024"
     end
 
-    config.vm.provision "file", source: "cookbooks.tgz", destination: "/tmp/cookbooks.tgz"
+    config.vm.provision "file", source: "data.tgz", destination: "/tmp/data.tgz"
     config.vm.provision "shell", path: "ckan2.5_install.sh"
 
   end

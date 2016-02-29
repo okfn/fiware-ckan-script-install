@@ -27,4 +27,4 @@ cat << EOF > /tmp/node.json
 EOF
 
 # Run recipe
-chef-solo -r /tmp/cookbooks.tgz -j /tmp/node.json
+chef-solo -r /tmp/data.tgz -j /tmp/node.json
