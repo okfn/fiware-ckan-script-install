@@ -17,7 +17,7 @@ make
 sudo make install
 
 # Install chef
-gem install chef --no-ri --no-rdoc
+sudo gem install chef --no-ri --no-rdoc
 
 # create node.json
 cat << EOF > /tmp/node.json
@@ -27,4 +27,4 @@ cat << EOF > /tmp/node.json
 EOF
 
 # Run recipe
-chef-solo -r /tmp/data.tgz -j /tmp/node.json
+sudo chef-solo -r /tmp/data.tgz -j /tmp/node.json
