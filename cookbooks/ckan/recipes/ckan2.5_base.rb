@@ -165,12 +165,14 @@ postgresql_database node[:ckan][:datastore][:sql_db_name] do
   encoding "utf8"
   action :create
 end
-execute "initialize ckan database" do
-  command "sudo ckan db init"
+
+bash "initialize ckan database" do
+  code "#{ENV['VIRTUAL_ENV']}/bin/python ckan db init"
+  cwd "#{CKAN_DIR}"
 end
-execute "set permissions" do
-  cwd CKAN_DIR
-  command "paster --plugin=ckan datastore set-permissions -c #{node[:ckan][:config_dir]}/production.ini | sudo -u postgres psql --set ON_ERROR_STOP=1"
+bash "set permissions" do
+  code "#{ENV['VIRTUAL_ENV']}/bin/python paster --plugin=ckan datastore set-permissions -c #{node[:ckan][:config_dir]}/production.ini | sudo -u postgres psql --set ON_ERROR_STOP=1"
+  cwd "#{CKAN_DIR}"
 end
 
 # CREATE FILE STORAGE DIRECTORY
