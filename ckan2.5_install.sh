@@ -27,4 +27,4 @@ cat << EOF > /tmp/node.json
 EOF
 
 # Run recipe
-sudo chef-solo --recipe-url=/tmp/data.tgz -j /tmp/node.json
+sudo chef-solo --recipe-url=/home/ubuntu/data.tgz -j /tmp/node.json
