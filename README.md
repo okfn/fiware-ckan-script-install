@@ -14,7 +14,7 @@ A base_ubuntu_14.04 image with at least **m1.small** flavour.
 
 ## Scripts
 
-- `ckan2.5_install.sh`: to be run on the base image to install the CKAN 2.5 package and dependencies using chef. Requires that `data.tgz` is uploaded to the image at `/tmp/data.tgz`.
+- `ckan2.5_install.sh`: to be run on the base image to install the CKAN 2.5 package and dependencies using chef. Requires that `data.tgz` is uploaded to the image at `/home/ubuntu/data.tgz`.
 - `install_verification.sh`: runs `ckan2.5_install_verification.sh` in the image to verify that the installed services are running. Checks the following:
     + Apache2 is running
     + A request to http://localhost is successful
