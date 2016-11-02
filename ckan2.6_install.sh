@@ -22,7 +22,7 @@ sudo gem install chef --no-ri --no-rdoc
 # create node.json
 cat << EOF > /tmp/node.json
 {
-  "run_list": [ "recipe[ckan::2.5_install]" ]
+  "run_list": [ "recipe[ckan::2.6_install]" ]
 }
 EOF
 

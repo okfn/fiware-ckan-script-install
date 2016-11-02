@@ -23,6 +23,6 @@ Vagrant.configure(2) do |config|
     config.vm.provision "file", source: "data.tgz", destination: "/tmp/data.tgz"
     move_data = "mv /tmp/data.tgz /home/ubuntu/data.tgz"
     config.vm.provision :shell, :inline => move_data
-    config.vm.provision "shell", path: "ckan2.5_install.sh"
+    config.vm.provision "shell", path: "ckan2.6_install.sh"
 
   end

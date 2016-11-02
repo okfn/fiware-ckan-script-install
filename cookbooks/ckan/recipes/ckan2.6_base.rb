@@ -2,7 +2,7 @@ ENV['VIRTUAL_ENV'] = node[:ckan][:virtual_env_dir]
 ENV['PATH'] = "#{ENV['VIRTUAL_ENV']}/bin:#{ENV['PATH']}"
 SOURCE_DIR = "#{ENV['VIRTUAL_ENV']}/src"
 CKAN_DIR = "#{SOURCE_DIR}/ckan"
-CKAN_PACKAGE_NAME = 'python-ckan_2.5-trusty_amd64.deb'
+CKAN_PACKAGE_NAME = 'python-ckan_2.6-trusty_amd64.deb'
 
 # INSTALL APACHE
 #
@@ -36,7 +36,7 @@ end
 # cookbook_file "#{Chef::Config[:file_cache_path]}/#{CKAN_PACKAGE_NAME}" do
 #   source "#{node[:ckan_package][:url]}#{CKAN_PACKAGE_NAME}"
 # end
-dpkg_package "python-ckan_2.5" do
+dpkg_package "python-ckan_2.6" do
   action :install
   source "#{Chef::Config[:file_cache_path]}/#{CKAN_PACKAGE_NAME}"
 end
